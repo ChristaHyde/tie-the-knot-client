@@ -3,7 +3,7 @@ var querystring = require('querystring'),
 
 module.exports = function(config) {
     var credentials = config.credentials;
-    config = Object.assign(config, {
+    config = Object.assign({},config, {
         apiFeature: '/Venues'
     });
 

@@ -1,7 +1,7 @@
 import React from 'react'
 // Importing files for Countdown
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './../../App';
 import './index.css';
 import Countdown from './Countdown';
 
