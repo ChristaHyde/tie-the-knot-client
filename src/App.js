@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Profile from "./components/Profile";
 // Import the React Router components, and the Places page component
-import Venues from "./components/lib/api/Venues";
+import Venues from "./components/Venues";
 // NEW - import the PrivateRoute component
 import PrivateRoute from "./components/PrivateRoute";
 ////////////////////////////////////////////////////////////////////////////
