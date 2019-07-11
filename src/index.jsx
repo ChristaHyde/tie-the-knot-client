@@ -5,6 +5,8 @@ import App from './features/app'
 import { Auth0Provider } from "./providers/auth0";
 import config from "./auth_config.json";
 
+
+
 const onRedirectCallback = appState => {
   window.history.replaceState(
     {},
