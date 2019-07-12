@@ -11,7 +11,8 @@ var foursquare = require('react-foursquare')({
 
 var params = {
   "ll": "37.7749,-122.4194",
-  "query": 'Blue Bottle'
+  "query": 'pizza',
+  "limit": 10
 };
 
 export default class FoursquareDemo extends Component {
@@ -34,7 +35,11 @@ export default class FoursquareDemo extends Component {
     console.log("******", modules, "*******")
     return (
     <div>
-        <div>Items:</div>
+        <div>
+            <h1>We found this for you:</h1>
+            <input placeholder = 'category search'></input>
+               <button>search</button>
+            </div>
         { this.state.items.map(item=> { return <div key={item.id}>{item.name}</div>}) }
     </div>
   )
