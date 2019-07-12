@@ -6,43 +6,57 @@ import './App.css';
 
 var foursquare = require('react-foursquare')({
   clientID: 'FZBQBUWMSKAWDAMPRQZFJMJBTP0U2OZH1YTF1R4VXZ0S22CD',
-  clientSecret: '4TLUI4YQFTUX2SANEPELVTCFOWV0QCU3VHKDOPEBPSV3WV23'  
+  clientSecret: '4TLUI4YQFTUX2SANEPELVTCFOWV0QCU3VHKDOPEBPSV3WV23'
 });
 
-var params = {
-  "ll": "37.7749,-122.4194",
-  "query": 'pizza',
-  "limit": 10
-};
+
 
 export default class FoursquareDemo extends Component {
 
   constructor(props) {
-     super(props);
-     this.state = {
-       items: []
-     };
-   }
+    super(props);
+    this.state = {
+      items: []
+    };
+  }
 
-  componentDidMount() {    
+
+  componentDidMount() {
+  }
+
+  startSearch = () => {
+    var params = {
+      "ll": "37.7749,-122.4194",
+      "query": this.state.searchTerm,
+      "limit": 10
+    };
     foursquare.venues.getVenues(params)
-      .then(res=> {
+      .then(res => {
         this.setState({ items: res.response.venues });
       });
   }
 
+  handleChange = (event) => {
+    this.setState({ searchTerm: event.target.value });
+  }
+
   render() {
     console.log("******", modules, "*******")
+    const { items } = this.state;
+    // const { ... } = this.props;
+    if (!items) { // items === null
+      return "loading...";
+    }
     return (
-    <div>
+      <div>
         <div>
-            <h1>We found this for you:</h1>
-            <input placeholder = 'category search'></input>
-               <button>search</button>
-            </div>
-        { this.state.items.map(item=> { return <div key={item.id}>{item.name}</div>}) }
-    </div>
-  )
+          <h1>We found this for you:</h1>
+          <input placeholder='category search' value={this.state.searchTerm} onChange={this.handleChange}></input>
+          <button onClick={this.startSearch}>search</button>
+        </div>
+        {items.map(item => { return <div key={item.id}>{item.name}</div> })}
+      </div>
+    )
   }
 }
 
