@@ -26,7 +26,7 @@ export default class FoursquareDemo extends Component {
 
   startSearch = () => {
     var params = {
-      "ll": "37.7749,-122.4194",
+      "ll": "40.7608,-111.8910",
       "query": this.state.searchTerm,
       "limit": 10
     };
@@ -43,6 +43,7 @@ export default class FoursquareDemo extends Component {
   render() {
     console.log("******", modules, "*******")
     const { items } = this.state;
+    //var items = this.state.items;
     // const { ... } = this.props;
     if (!items) { // items === null
       return "loading...";
