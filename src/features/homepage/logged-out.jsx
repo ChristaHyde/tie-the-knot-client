@@ -1,6 +1,6 @@
 import React from 'react'
 import Flexbox from 'flexbox-react'
-import WeddingCard from '../../components/card'
+import WeddingCard, { VenuesCard } from '../../components/card'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
@@ -11,6 +11,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
+
 
 
 
@@ -99,15 +100,15 @@ export default function LoggedOut() {
         </p>
       </Jumbotron>
 
-      <Flexbox flexDirection="row" flexWrap="wrap"> { /* container */}
+      <Flexbox className="full-width" flexDirection="column"> { /* container */}
         <Flexbox> {/* first item */}
-          <WeddingCard title="Title 1" />
+          <VenuesCard header="Venues" title="Choose Your Venue" />
         </Flexbox>
         <Flexbox>
-          <WeddingCard title="Title 2 (not title 1!)" />
+          <VenuesCard title="Title 2 (not title 1!)" />
         </Flexbox>
         <Flexbox>
-          <WeddingCard>This is a card</WeddingCard>
+          <VenuesCard />
         </Flexbox>
         <Flexbox>
           <WeddingCard>This is a card</WeddingCard>
