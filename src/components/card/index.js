@@ -2,12 +2,30 @@ import React, { Component } from 'react'
 import { Card } from 'react-bootstrap';
 import { getVenues } from '../../foursquare';
 
-//import './styles.css'
+import './styles.css'
+
+export function VenuItem({
+  id, name, location, overVenueId, handleOverVenue
+}) {
+  return <div
+    className={`venue-item ${overVenueId === id ? 'over' : ''}`}
+    onPointerEnter={() => handleOverVenue(id)}
+    onPointerLeave={() => handleOverVenue(null)}
+    onClick={() => {
+      if (window.confirm("Would you like to add this venue to your list?")) {
+        alert('yes, do it')
+      } else {
+        alert('nope')
+      }
+    }}
+  >{name} - {location.address}</div>
+}
 
 export class VenuesCard extends Component {
   state = {
     searchTerm: '',
-    venues: []
+    venues: [],
+    overItemId: null
   };
   componentDidMount() {
 
@@ -27,12 +45,31 @@ export class VenuesCard extends Component {
     this.setState({ searchTerm: event.target.value });
   }
 
+  handleOverVenue = (id) => {
+    this.setState({ overVenuId: id })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.startSearch()
+  }
+
   render() {
     var venues = this.state.venues;
     return (<WeddingCard {...this.props}>
-      {!venues && "loading..." || venues.map(item => { return <div key={item.id}>{item.name}</div> })}
-      <input placeholder='category search' value={this.state.searchTerm} onChange={this.handleChange}></input>
-      <button onClick={this.startSearch}>search</button>
+      {
+        !venues && "loading..." || venues.map(item => (
+          <VenuItem
+            key={item.id}
+            {...item}
+            overVenueId={this.state.overVenueId}
+            handleOverVenue={this.handleOverVenue}
+          />
+        ))}
+      <form onSubmit={this.handleSubmit}>
+        <input placeholder='category search' value={this.state.searchTerm} onChange={this.handleChange}></input>
+        <button onClick={this.startSearch}>search</button>
+      </form>
     </WeddingCard>);
   }
 }
