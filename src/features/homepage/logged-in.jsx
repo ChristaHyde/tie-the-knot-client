@@ -1,4 +1,4 @@
-
+///////Importing components/////////
 import React from 'react'
 import Flexbox from 'flexbox-react'
 import WeddingCard from '../../components/card'
