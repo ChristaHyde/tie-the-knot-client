@@ -1,29 +1,39 @@
 import React, { Component } from 'react';
-import Countdown from './Countdown.js';
-// import logo from './logo.svg';
-// import github from './github.png';
+import Clock from './Clock';
+import {Form, FormControl, Button} from 'react-bootstrap';
 
 class Moment extends Component {
-  render() {
-    const currentDate = new Date();
-    const year = (currentDate.getMonth() === 11 && currentDate.getDate() > 23) ? currentDate.getFullYear() + 1 : currentDate.getFullYear();
-    return (
-      <div className="App">
-        {/* <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React Countdown</h2>
+	constructor(props){
+		super(props);
+		this.state = {
+			deadLine: 'December 31, 2019',
+			newDeadLine: ''
+		}
+	}
 
-          <a href="https://github.com/kristinbaumann/react-countdown" target="_blank">
-            <img src={github} alt="github" className="githubIcon" />
-            <span>View on Github</span>
-          </a>
-        </div> */}
+	changeDeadLine(){
+		console.log('state', this.state);	
+		this.setState({deadLine: this.state.newDeadLine})	
+	}
 
-        <h3 className="title">Days untill I say I DO:</h3>
-        <Countdown date={`${year}-12-24T00:00:00`} />
-      </div>
-    );
-  }
+	render() {
+		return (
+				<div className="App">
+					<div className="App-title">Countdown to {this.state.deadLine}</div>
+					<Clock 
+						deadLine={this.state.deadLine}
+					/>
+					<Form inline>
+						<FormControl
+							className="Deadline-input" 
+							placeholder='new date'
+							onChange={event => this.setState({newDeadLine: event.target.value})} 
+						/>
+						<Button onClick={() => this.changeDeadLine()}>Submit</Button>
+					</Form>
+				</div>
+		)
+	}
 }
 
 export default Moment;

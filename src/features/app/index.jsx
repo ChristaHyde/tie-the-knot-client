@@ -12,6 +12,7 @@ import Maps from '../../components/maps/app';
 
 import Moment from '../../components/countdown/Moment';
 import Moment from '../../components/countdown/Moment';
+import Moment from "../../components/countdown/Moment";
 
 import TaskListPage from '../../pages/TaskListPage';
 
@@ -23,7 +24,7 @@ export default function App({ foo }) {
     </header>
     <Switch>
       {/* added route for maps api */}
-      <Route exact path="/moment" component={Moment} />
+      <Route exact path="/Moment" component={Moment} />
       <Route exact path="/app" component={Maps} />
       <Route exact path="/" component={Homepage} />
       <PrivateRoute path="/profile" component={Profile} />

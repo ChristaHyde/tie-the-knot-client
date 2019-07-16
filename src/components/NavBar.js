@@ -32,7 +32,7 @@ const NavBar = () => {
         {/* added link for places api */}
         <Link to="/app">Search</Link>
         {/* added link to countdown */}
-        <Link to="/moment">Countdown</Link>
+        <Link to="/Moment">Countdown</Link>
         </span>
       )}
     </div>
