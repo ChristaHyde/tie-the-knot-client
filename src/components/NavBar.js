@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 // import Maps from '../components/maps/app';
 
 
+
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
@@ -30,6 +31,8 @@ const NavBar = () => {
         <Link to="/profile">Profile</Link>
         {/* added link for places api */}
         <Link to="/app">Search</Link>
+        {/* added link to countdown */}
+        <Link to="/moment">Countdown</Link>
         </span>
       )}
     </div>

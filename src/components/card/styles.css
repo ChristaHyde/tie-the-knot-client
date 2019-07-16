@@ -2,6 +2,17 @@
   padding: 32px 12px;
   border: 1px solid red;
   width: 30%;
-  height: 200px;
 }
 
+
+.venue-item.over {
+  border: 1px solid blue;
+}
+
+.venue-item {
+  border: 1px solid transparent;
+}
+
+.venue-item:hover {
+  border: 1px solid blue;
+}
