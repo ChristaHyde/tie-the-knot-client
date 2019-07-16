@@ -3,22 +3,40 @@ import { Card } from 'react-bootstrap';
 import { getVenues } from '../../foursquare';
 
 import './styles.css'
+import { postData } from '../../util/fetch-util';
 
-export function VenuItem({
-  id, name, location, overVenueId, handleOverVenue
-}) {
-  return <div
-    className={`venue-item ${overVenueId === id ? 'over' : ''}`}
+
+async function saveVenue(venueData) {
+  // TODO: add proper userId
+  venueData.userId = '0';
+  try {
+    const result = await postData('//localhost:3001/api/venues', venueData);
+    console.log('finished saveVenue:', result);
+    return true;
+  }
+  catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
+export function VenuItem({ venue, overVenueId, handleOverVenue }) {
+  const { id, name, location: { address, lat, lng } } = venue;
+  return (<div className="venue-item"
     onPointerEnter={() => handleOverVenue(id)}
     onPointerLeave={() => handleOverVenue(null)}
-    onClick={() => {
+    onClick={async () => {
       if (window.confirm("Would you like to add this venue to your list?")) {
-        alert('yes, do it')
-      } else {
-        alert('nope')
+        const result = await saveVenue({
+          venueId: id,
+          name,
+          lat,
+          lng
+        });
+
       }
     }}
-  >{name} - {location.address}</div>
+  >{name} - {address}</div>);
 }
 
 export class VenuesCard extends Component {
@@ -32,9 +50,10 @@ export class VenuesCard extends Component {
   }
 
   startSearch = (event) => {
+    var { categoryId } = this.props;
     const params = {
       query: this.state.searchTerm,
-      "categoryId": "56aa371be4b08b9a8d5734c5,4bf58dd8d48988d171941735" // wedding halls
+      categoryId: categoryId
     };
     getVenues(params).then((venues) => {
       this.setState({ venues })
@@ -46,7 +65,7 @@ export class VenuesCard extends Component {
   }
 
   handleOverVenue = (id) => {
-    this.setState({ overVenuId: id })
+    this.setState({ overVenueId: id })
   }
 
   handleSubmit = (e) => {
@@ -61,7 +80,8 @@ export class VenuesCard extends Component {
         !venues && "loading..." || venues.map(item => (
           <VenuItem
             key={item.id}
-            {...item}
+
+            venue={item}
             overVenueId={this.state.overVenueId}
             handleOverVenue={this.handleOverVenue}
           />
@@ -79,6 +99,7 @@ class WeddingCard extends Component {
 
   render() {
     var { header, title, children } = this.props;
+    //var title = this.props.title;
     return (<Card className="full-width" border="primary">
       <Card.Header>{header || "(no title)"}</Card.Header>
       <Card.Body>

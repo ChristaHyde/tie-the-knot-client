@@ -23,7 +23,7 @@ function MyNavBar() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Task List</Nav.Link>
+          <Nav.Link href="/task-list">Task List</Nav.Link>
           {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -100,10 +100,13 @@ export default function LoggedOut() {
 
       <Flexbox className="full-width" flexDirection="column"> { /* container */}
         <Flexbox> {/* first item */}
-          <VenuesCard header="Wedding Venues" title="Choose Your Venue" />
+          <VenuesCard header="Wedding Venues" title="Choose Your Venue"
+            categoryId="56aa371be4b08b9a8d5734c5,4bf58dd8d48988d171941735" // wedding halls, event spaces
+          />
         </Flexbox>
         <Flexbox> {/* second item */}
-          <VenuesCard header="Cake Shops" title="Choose Your Venue" />
+          <VenuesCard header="Cake Shops" title="Choose Your Venue"
+            categoryId="4bf58dd8d48988d1d0941735,4bf58dd8d48988d16a941735" />
         </Flexbox>
         <Flexbox> {/* third item */}
           <VenuesCard header="Jewelery" title="Choose Your Venue" />

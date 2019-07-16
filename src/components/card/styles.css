@@ -12,3 +12,7 @@
 .venue-item {
   border: 1px solid transparent;
 }
+
+.venue-item:hover {
+  border: 1px solid blue;
+}
