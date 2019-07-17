@@ -11,8 +11,8 @@ import Maps from '../../components/maps/app';
 ////added countdown to check if it works////
 
 import Moment from '../../components/countdown/Moment';
-import Moment from '../../components/countdown/Moment';
-import Moment from "../../components/countdown/Moment";
+// import Moment from '../../components/countdown/Moment';
+// import Moment from "../../components/countdown/Moment";
 
 import TaskListPage from '../../pages/TaskListPage';
 
