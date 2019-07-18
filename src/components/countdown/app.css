@@ -1,7 +1,19 @@
+.container{
+	height: 550px;
+	width: 100%;
+	background-image: url("../../features/homepage/images/Vintage-Wedding-Roses.jpg");
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
 .App{
 	text-align: center;
 	font-size: 35px;
 	margin-top: 20%;
+	padding-top: 120px;
+	
 
 }
 
@@ -20,4 +32,10 @@
 .Deadline-input{
 	font-size: 20px;
 	margin:5px;
+	position: relative;
+	left: 300px;
+}
+button{
+	position: relative;
+	left: 300px;
 }
