@@ -1,9 +1,18 @@
 
 
 export function postData(url = '', data = {}) {
+  return sendData('POST', url, data);
+}
+
+
+export function putData(url = '', data = {}) {
+  return sendData('PUT', url, data);
+}
+
+function sendData(method, url, data) {
   // Default options are marked with *
   return fetch(url, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    method: method, // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, cors, *same-origin
     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
     credentials: 'same-origin', // include, *same-origin, omit

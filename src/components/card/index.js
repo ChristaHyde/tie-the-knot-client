@@ -33,6 +33,13 @@ export function VenuItem({ venue, overVenueId, handleOverVenue }) {
           lat,
           lng
         });
+        if (result) {
+          window.alert("This venue has been added to your Task List!");
+        }
+        else {
+          window.alert("Could not save to Task List");
+        }
+
 
       }
     }}
