@@ -1,5 +1,9 @@
 .full-width {
   width: 100% !important;
+  /* background-color: #FCC1B0; */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: #EDEDED;
 }
 
 .flex-box {
@@ -8,9 +12,36 @@
 }
 
 .border-primary {
-  width: 310px;
-  
+  width: 310px; 
 }
+
+.jumbotron {
+  background-image: url("https://www.nerdwallet.com/assets/blog/wp-content/uploads/2017/06/how-much-does-a-wedding-cost.jpg");
+  background-size: cover;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+a {
+  color: rgba(0,0,0,.5);
+}
+
+p {
+  color: rgba(0,0,0,.5);
+}
+
+h5 {
+  color: rgba(0,0,0,.5);
+}
+
+.page-footer {
+  background-color: rgba(156, 92, 124, 0.404);
+}
+
+/* .navbar-expand-lg navbar-light bg-light {
+  background-color: #BC828A;
+
+} */
 
 /* .navbar {
   background-color: pink;

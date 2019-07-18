@@ -27,12 +27,12 @@ const NavBar = () => {
       {/* NEW - add a link to the home and profile pages */}
       {isAuthenticated && (
         <span>
-        <Link to="/">Home</Link>&nbsp;
+          {/* <Link to="/">Home</Link>&nbsp;
         <Link to="/profile">Profile</Link>
         {/* added link for places api */}
-        <Link to="/app">Search</Link>
+          {/* <Link to="/app">Search</Link>
         {/* added link to countdown */}
-        <Link to="/Moment">Countdown</Link>
+          {/* <Link to="/Moment">Countdown</Link> */}
         </span>
       )}
     </div>

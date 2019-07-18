@@ -1,12 +1,12 @@
 .card {
   padding: 32px 12px;
-  border: 1px solid red;
+  border: 1px solid #BC828A;
   width: 30%;
 }
 
 
 .venue-item.over {
-  border: 1px solid blue;
+  border: 1px solid #BC828A;
 }
 
 .venue-item {
@@ -14,5 +14,5 @@
 }
 
 .venue-item:hover {
-  border: 1px solid blue;
+  border: 1px solid #BC828A;
 }
