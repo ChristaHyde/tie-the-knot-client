@@ -6,7 +6,7 @@ class Moment extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			deadLine: 'December 31, 2019',
+			// deadLine: 'December 31, 2019',
 			newDeadLine: ''
 		}
 	}
@@ -18,19 +18,21 @@ class Moment extends Component {
 
 	render() {
 		return (
+			<div className="container">
 				<div className="App">
-					<div className="App-title">Countdown to {this.state.deadLine}</div>
+					<div className="App-title">Days until we say......I DO!! {this.state.deadLine}</div>
 					<Clock 
 						deadLine={this.state.deadLine}
 					/>
 					<Form inline>
 						<FormControl
 							className="Deadline-input" 
-							placeholder='new date'
+							placeholder='Your wedding date'
 							onChange={event => this.setState({newDeadLine: event.target.value})} 
 						/>
 						<Button onClick={() => this.changeDeadLine()}>Submit</Button>
 					</Form>
+				</div>
 				</div>
 		)
 	}
