@@ -137,7 +137,7 @@ import Button from 'react-bootstrap/Button'
 import './style.css'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+// import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact"
@@ -152,8 +152,11 @@ function MyNavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Task List</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/task-list">Task List</Nav.Link>
+          <Nav.Link href="/Moment">Countdown</Nav.Link>
+          <Nav.Link href="/profile">Profile</Nav.Link>
+          <Nav.Link href="/app">Search</Nav.Link>
           {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -162,10 +165,10 @@ function MyNavBar() {
             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
           </NavDropdown> */}
         </Nav>
-        <Form inline>
+        {/* <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
-        </Form>
+        </Form> */}
       </Navbar.Collapse>
     </Navbar>)
 }
@@ -182,7 +185,7 @@ const FooterPage = () => {
             </p>
           </MDBCol>
           <MDBCol md="6">
-            <h5 className="title">Links</h5>
+            <h5 className="title">GitHub Links</h5>
             <ul>
               <li className="list-unstyled">
                 <a href="https://github.com/marcelinaov">Marcelina Ortiz</a>
@@ -229,23 +232,30 @@ export default function LoggedOut() {
       </Jumbotron>
 
       <Flexbox className="full-width" flexDirection="column"> { /* container */}
-        <Flexbox> {/* first item */}
-          <VenuesCard header="Wedding Venues" title="Choose Your Venue" />
+        <Flexbox className="venue-card"> {/* first item */}
+          <VenuesCard className="venue-card" header="Wedding Venues" title="Choose Your Venue"
+            categoryId="56aa371be4b08b9a8d5734c5,4bf58dd8d48988d171941735" // wedding halls, event spaces
+          />
         </Flexbox>
-        <Flexbox> {/* second item */}
-          <VenuesCard header="Cake Shops" title="Choose Your Venue" />
+        <Flexbox className="flex-card"> {/* second item */}
+          <VenuesCard header="Cake Shops" title="Choose Your Venue"
+            categoryId="4bf58dd8d48988d1d0941735,4bf58dd8d48988d16a941735" />
         </Flexbox>
-        <Flexbox> {/* third item */}
-          <VenuesCard header="Jewelery" title="Choose Your Venue" />
+        <Flexbox className="flex-card"> {/* third item */}
+          <VenuesCard header="Jewelery" title="Choose Your Venue"
+            categoryId="4bf58dd8d48988d111951735" />
         </Flexbox>
-        <Flexbox> {/* fourth item */}
-          <VenuesCard header="Dress Shops" title="Choose Your Venue" />
+        <Flexbox className="flex-card"> {/* fourth item */}
+          <VenuesCard header="Dress Shops" title="Choose Your Venue"
+            categoryId="4bf58dd8d48988d11a951735" />
+        </Flexbox >
+        <Flexbox className="flex-card"> {/* fifth item */}
+          <VenuesCard header="Floral Shops" title="Choose Your Venue"
+            categoryId="4bf58dd8d48988d11b951735" />
         </Flexbox>
-        <Flexbox> {/* fifth item */}
-          <VenuesCard header="Floral Shops" title="Choose Your Venue" />
-        </Flexbox>
-        <Flexbox> {/* sixth item */}
-          <VenuesCard header="Decoration Rentals" title="Choose Your Venue" />
+        <Flexbox className="flex-card"> {/* sixth item */}
+          <VenuesCard header="Decoration Rentals" title="Choose Your Venue"
+            categoryId="56aa371be4b08b9a8d573552" />
         </Flexbox>
       </Flexbox>
 
@@ -255,7 +265,3 @@ export default function LoggedOut() {
   </>)
 
 }
-
-
-
-

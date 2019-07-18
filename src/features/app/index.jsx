@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
+import './style.css';
 import NavBar from "../../components/NavBar";
 import PrivateRoute from "../../components/PrivateRoute";
 import Profile from "../../components/Profile";
