@@ -1,4 +1,22 @@
-.container{
+.content{
+	background-color: #F2DBD8;
+	border-style: double;
+	border-color: #D7A477;
+	width: 800px;
+	height: 200px;
+	position: relative;
+	left: 50px;
+	opacity: 0.6;
+	
+}
+
+
+.App{
+	text-align: center;
+	font-size: 35px;
+	margin-top: 20%;
+	padding-top: 120px;
+	border: 20px;
 	height: 550px;
 	width: 100%;
 	background-image: url("../../features/homepage/images/Vintage-Wedding-Roses.jpg");
@@ -7,15 +25,6 @@
 }
 
 
-
-.App{
-	text-align: center;
-	font-size: 35px;
-	margin-top: 20%;
-	padding-top: 120px;
-	
-
-}
 
 .App-title{
 	font-size: 50px;
@@ -27,15 +36,31 @@
 .Clock-days{
 	display: inline;
 	margin: 10px;
+	
+	
 }
 
 .Deadline-input{
 	font-size: 20px;
 	margin:5px;
 	position: relative;
-	left: 300px;
+	left: 200px;
 }
 button{
+	/* position: relative;
+	left: 300px; */
+	background-color: #F2DBD8;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #D7A477;
+}
+
+.btn-primary {
 	position: relative;
-	left: 300px;
+	left: 200px;
+	background-color: #D39FA7;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #D7A477;
+	color: black;
 }
