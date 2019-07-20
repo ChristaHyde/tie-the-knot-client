@@ -5,7 +5,8 @@
 	width: 800px;
 	height: 200px;
 	position: relative;
-	left: 50px;
+	left: 300px;
+	top: 200px;
 	opacity: 0.6;
 	
 }
@@ -17,11 +18,14 @@
 	margin-top: 20%;
 	padding-top: 120px;
 	border: 20px;
-	height: 550px;
+	height: 760px;
 	width: 100%;
 	background-image: url("../../features/homepage/images/Vintage-Wedding-Roses.jpg");
 	background-size: cover;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	position: relative;
+	bottom: 100px;
+	
 }
 
 
