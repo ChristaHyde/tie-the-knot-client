@@ -46,7 +46,7 @@ class Clock extends Component {
 						<div className="Clock-seconds">{this.leading0(this.state.seconds)} seconds</div>
 					</div>
 				)
-					: 'Please enter your wedding date bellow'}
+					: 'Please enter your wedding date'}
 
 			</div>
 		)
