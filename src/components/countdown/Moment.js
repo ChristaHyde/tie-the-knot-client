@@ -29,7 +29,7 @@ class Moment extends Component {
 					<Form inline>
 						<FormControl
 							className="Deadline-input" 
-							placeholder='Your wedding date'
+							placeholder='MM/DD/YYYY'
 							onChange={event => this.setState({newDeadLine: event.target.value})} 
 						/>
 						<Button onClick={() => this.changeDeadLine()}>Submit</Button>
