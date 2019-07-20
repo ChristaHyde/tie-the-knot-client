@@ -18,8 +18,10 @@ class Moment extends Component {
 
 	render() {
 		return (
-			<div className="container">
-				<div className="App">
+			
+				
+			<div className="App">
+				<div className="content">
 					<div className="App-title">Days until we say......I DO!! {this.state.deadLine}</div>
 					<Clock 
 						deadLine={this.state.deadLine}
@@ -32,8 +34,9 @@ class Moment extends Component {
 						/>
 						<Button onClick={() => this.changeDeadLine()}>Submit</Button>
 					</Form>
+					</div>
 				</div>
-				</div>
+			
 		)
 	}
 }
